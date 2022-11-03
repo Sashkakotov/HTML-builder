@@ -1,6 +1,6 @@
 const fs=require('fs')
 const path=require('path')
-try{
+
 fs.promises.readdir(path.join(__dirname,'secret-folder'),{withFileTypes:true})
 .then(filenames=>{
   console.log("\nCurrent directory files:");
@@ -18,9 +18,9 @@ fs.promises.readdir(path.join(__dirname,'secret-folder'),{withFileTypes:true})
     }
   }
 })
-}
-catch{
-  (err) =>   console.log(err)
-}
+
+.catch((err) =>   console.log(err))
+  
+
 
 
