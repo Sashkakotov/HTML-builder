@@ -12,7 +12,7 @@ fs.promises.readdir(path.join(__dirname,'secret-folder'),{withFileTypes:true})
           console.log(error)
         }
         else{
-          console.log(`${filename.name}-${stats.size/1000}kb`)
+          console.log(`${filename.name.replace(/\./,'-')}-${stats.size/1000}kb`)
         }
       })
     }
