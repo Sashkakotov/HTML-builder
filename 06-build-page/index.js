@@ -60,7 +60,7 @@ async function createHTML() {
               path.join(__dirname, "components", `${filename.name}`)
             );
             const pattern = path.basename(`${filename.name}`, ".html");
-            template = template.replace(`{${pattern}}`, readFile);
+            template = template.replace(`{{${pattern}}}`, readFile);
           }
         }
         await fsPromises.writeFile(
