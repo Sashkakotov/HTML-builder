@@ -9,7 +9,7 @@ async function createDirectory(directory) {
 }
 
 async function copyDirectory(folder, folderCopy) {
-  // await fsPromises.rm(folderCopy,{force:true,recursive:true})
+  await fsPromises.rm(folderCopy,{force:true,recursive:true})
   await fsPromises.mkdir(folderCopy, { recursive: true });
   const files = await fsPromises.readdir(folder, { withFileTypes: true });
   files.forEach(async (file) => {

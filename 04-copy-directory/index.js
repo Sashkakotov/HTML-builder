@@ -3,6 +3,7 @@ const fsPromises = fs.promises;
 const path = require("path");
 
 async function copyDirectory() {
+  await fsPromises.rm(path.join(__dirname, 'files-copy'), {force: true, recursive: true });
   await fsPromises.mkdir(path.join(__dirname, "files-copy"), {
     recursive: true,
   });
